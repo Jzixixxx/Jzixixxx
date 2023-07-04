@@ -1,9 +1,11 @@
+/* 全局样式 */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* 头部 */
 #header {
     background-color: #333;
     color: #fff;
@@ -32,6 +34,7 @@ body {
     text-decoration: none;
 }
 
+/* Banner */
 #banner {
     background-color: #f3f3f3;
     padding: 3em;
@@ -55,6 +58,7 @@ body {
     text-decoration: none;
 }
 
+/* 特性 */
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -78,6 +82,7 @@ body {
     font-size: 1em;
 }
 
+/* 商品 */
 .posts {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -111,6 +116,7 @@ body {
     text-decoration: none;
 }
 
+/* 侧边栏 */
 #sidebar {
     background-color: #333;
     color: #fff;

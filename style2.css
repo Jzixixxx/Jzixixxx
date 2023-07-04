@@ -5,6 +5,7 @@ body {
     background-color: #f7f7f7;
 }
 
+/* 头部 */
 #header {
     background-color: #f3a3a3;
     color: #fff;
@@ -36,14 +37,14 @@ body {
     text-decoration: none;
 }
 
-
+/* 主内容区域 */
 #main {
     width: 1500px;
     padding: 0em;
     margin: 0 auto;
 }
 
-
+/* Banner */
 #banner {
     text-align: center;
     margin-bottom: 2em;
@@ -67,7 +68,7 @@ body {
     text-decoration: none;
 }
 
-
+/* 特性 */
 .features {
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +95,7 @@ body {
     color: #777;
 }
 
-
+/* 商品 */
 .posts {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -131,7 +132,7 @@ body {
     text-decoration: none;
 }
 
-
+/* 侧边栏 */
 #sidebar {
     width: 1500px;
     background-color: #f3a3a3;
@@ -140,6 +141,7 @@ body {
     position: sticky;
     top: 0;
     margin: 0 auto;
+    /* 圆角 */
     border-radius: 0.5em;
 }
 

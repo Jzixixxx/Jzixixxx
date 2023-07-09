@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>游戏规则</title>
+    <style>
+        body {
+            background-image: url('/Users/jzixixxx/Downloads/壁纸/背景插画.PNG');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .game-rules {
+        text-align: center;
+        padding: 10px;
+        font-size: 20px;
+        margin: 0 auto;
+        width: 50%;
+    }
+    #startbtn {
+        display: block;
+        width: 200px;
+        height: 100px;
+        padding: 30px 40px;
+        margin: auto;
+        background-color: #8a8d8a;
+        color: white;
+        text-align: center;
+        font-size: 20px;
+        
+    }
+    </style>
+</head>
+<body>
+
+    <div class="game-rules">
+        <h1>游戏规则</h1>
+        <p>1.玩家用鼠标点击页面位置不断变化的红色方块</p>
+        <p>2.在规定的30秒时间内，玩家需要使用鼠标来点击尽可能多的方块</p>
+        <p>3.每击中一个方块加1分，没击中不加分，以此累计得分</p>
+        <p>4.让我们一起进入游戏测试注意力吧！</p>
+            
+        <input class="btn" id="startbtn" type="button" value="开始游戏" onclick="startgame()" /> 
+    </div>
+    <script>
+        function startgame() {
+            window.location.href = "测试游戏.html"; // 跳转到下一个页面
+        };
+        
+    </script>
+</body>
+</html>

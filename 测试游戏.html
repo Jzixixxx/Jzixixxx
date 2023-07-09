@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>测试注意力小游戏</title>
+	<style>
+		body {
+			background-color: #fff;
+			color: #000;
+			font-family: Arial, sans-serif;
+			text-align: center;
+            background-image: url('/Users/jzixixxx/Downloads/壁纸/插画壁纸.PNG');
+		}
+		h1 {
+			font-size: 48px;
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		#game {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 50px;
+		}
+		.square {
+			width: 100px;
+			height: 100px;
+			background-color: #f00;
+			margin: 10px;
+			cursor: pointer;
+			transition: margin 0.2s;
+		}
+		.square:hover {
+			margin-top: -10px;
+		}
+		.score {
+			font-size: 36px;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+		.timer {
+			font-size: 36px;
+			font-weight: bold;
+			text-align: center;
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<h1>测试注意力小游戏</h1>
+	<div class="score">得分：<span id="score">0</span></div>
+	<div class="timer">用时：<span id="time">0</span> 秒</div>
+	<div id="game">
+		<div class="square"></div>
+	</div>
+
+	<script>
+		var score = 0;
+		var startTime;
+		var gameInterval;
+		var timeInterval;
+
+		function startGame() {
+			gameInterval = setInterval(moveSquare, 1000);
+			timeInterval = setInterval(updateTime, 1000);
+			startTime = new Date().getTime();
+			document.querySelector('.square').addEventListener('click', addScore);
+		}
+
+		function stopGame() {
+			clearInterval(gameInterval);
+			clearInterval(timeInterval);
+			document.querySelector('.square').removeEventListener('click', addScore);
+			var endTime = new Date().getTime();
+			var time = Math.floor((endTime - startTime) / 1000);
+			document.getElementById('time').textContent = time;
+			var attentionLevel;
+			if (score <= 10) {
+				attentionLevel = '你的注意力为：弱';
+			} else if (score <= 20) {
+				attentionLevel = '你的注意力为：中等';
+			} else {
+				attentionLevel = '你的注意力为：强';
+			}
+			alert('游戏结束！您的得分是：' + score + '，用时：' + time + '秒。' + attentionLevel);
+		}
+
+		function moveSquare() {
+			var game = document.getElementById('game');
+			var square = document.querySelector('.square');
+			var maxX = game.offsetWidth - square.offsetWidth - 20;
+			var maxY = game.offsetHeight - square.offsetHeight - 20;
+			var x = Math.floor(Math.random() * maxX);
+			var y = Math.floor(Math.random() * maxY);
+			square.style.marginLeft = x + 'px';
+			square.style.marginTop = y + 'px';
+		}
+
+		function addScore() {
+			score++;
+			document.getElementById('score').textContent = score;
+		}
+
+		function updateTime() {
+			var now = new Date().getTime();
+			var time = Math.floor((now - startTime) / 1000);
+			document.getElementById('time').textContent = time;
+		}
+
+		window.onload = function() {
+			startGame();
+			setTimeout(stopGame, 30000);
+		};
+		
+	</script>
+</body>
+</html>
